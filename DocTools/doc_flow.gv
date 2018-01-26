@@ -1,0 +1,40 @@
+# Flow diagram for creating and publishing documentation
+
+digraph DocFlow
+  {
+  # boxes are processes
+  # ellipses are data
+
+  # Create documents step
+  #   p_src are comments embedded within source code for some programming language
+  #         such as C++
+  #   d_src are stanalone files with source code describing the document such as markdown
+  #
+  psrc [ shape = ellipse, label = "Programming\nSource\nCode" ];
+  dsrc [ shape = ellipse, label = "Documentation\nSource\nCode" ];
+
+  src_to_doc  [ shape = box, label = "Create Doc From\nSource Code" ];
+
+  doc [ shape = ellipse, label = "Call trees\nInheritance Diagrams\nGuides\nTutorials\n..." ];
+
+  psrc -> src_to_doc;
+  dsrc -> src_to_doc;
+
+  src_to_doc -> doc;
+
+  # Publish documents step
+  #
+  pub_doc [ shape = box, label = "Publish Documents" ];
+
+  web_sites [ shape = ellipse, label = "Web Sites" ];
+  man_pages [ shape = ellipse, label = "Man Pages" ];
+  manuals [ shape = ellipse, label = "Manuals" ];
+  and_so_on [ shape = ellipse, label = "..." ];
+  
+  doc -> pub_doc;
+
+  pub_doc -> web_sites;
+  pub_doc -> man_pages;
+  pub_doc -> manuals;
+  pub_doc -> and_so_on;
+  }

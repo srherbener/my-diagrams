@@ -1,0 +1,27 @@
+digraph UfoFlow
+  {
+  subgraph cluster_esmf 
+    {
+    d1 [ shape=ellipse, label="Model\nSpecific" ];
+    p1 [ shape=box, label="Interpolation" ];
+
+    d1 -> p1;
+
+    label="ESMF";
+    labeljust="l";
+    }
+
+  subgraph cluster_ufo
+    {
+    d2 [ shape=ellipse, label="Independent\nData Store" ];
+    p2 [ shape=box, label="Scientific\nProcesses\n(CRTM)" ];
+
+    d2 -> p2;
+
+    label="UFO";
+    labeljust="l";
+    }
+
+  p1 -> d2;
+
+  }

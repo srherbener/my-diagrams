@@ -1,0 +1,15 @@
+digraph ufo_classes
+  {
+  c_basis [ shape=record, label="{ BasisObsData | { nobs\nnlocs\nfilein\nfileout\nobspoint | Setup\nDelete\nGetLocs } }" ];
+
+  c_obs [ shape=record, label="{ ObsData | { | Setup\nDelete\nGetLocs } }" ];
+
+  c_raddiag [ shape=record, label="{ RadDiag | { header_fix\nheader_chan\nheader_name\ndatafix\ndatachan\ndataextra | read_\ndelete_\ngetlocs_ } }" ];
+
+  c_raobdiag [ shape=record, label="{ RaobDiag | { header\nmass | read_\ndelete_\ngetlocs_ } }" ];
+
+
+  c_obs -> c_basis;
+  c_raddiag -> c_basis;
+  c_raobdiag -> c_basis;
+  }

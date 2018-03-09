@@ -1,0 +1,21 @@
+digraph UfoNetcdfFlow
+  {
+  rankdir="LR";
+
+  sat     [ shape=ellipse, label="Satellite" ];
+  satnc   [ shape=ellipse, label="Satellite\nnetCDF" ];
+  satbf   [ shape=ellipse, label="Satellite\nBUFR" ];
+  satncd  [ shape=ellipse, label="Satellite\nncdiag" ];
+  satncd2 [ shape=ellipse, label="Satellite\nncdiag" ];
+
+  obsncd  [ shape=ellipse, label="Obs\nncdiag" ];
+  obsncd2 [ shape=ellipse, label="Obs\nncdiag" ];
+
+  b2n  [ shape=box, label="bufr2nc.py" ];
+  gsi  [ shape=box, label="GSI" ];
+  ufo  [ shape=box, label="UFO" ];
+
+  sat -> satnc -> satbf -> b2n -> satncd -> gsi -> obsncd;
+
+  satnc -> satncd2 -> ufo -> obsncd2;
+  }

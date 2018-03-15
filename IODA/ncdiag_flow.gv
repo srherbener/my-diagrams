@@ -1,0 +1,13 @@
+digraph NcdiagFlow
+  {
+  rankdir="LR";
+
+  ncd_obs [ shape=ellipse, label="Obs\nncdiag" ];
+  ncd_da  [ shape=ellipse, label="Obs, Model, Etc.\nncdiag" ];
+
+  gsi  [ shape=box, label="GSI" ];
+  ufo  [ shape=box, label="UFO" ];
+
+  ncd_obs -> gsi -> ncd_da;
+  ncd_obs -> ufo -> ncd_da;
+  }

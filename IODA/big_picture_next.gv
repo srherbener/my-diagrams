@@ -2,7 +2,7 @@ digraph NcdiagFlow
   {
   obs_store  [ shape=ellipse, label="Obs\nStore" ];
   diag_store [ shape=ellipse, label="Diag\nStore" ];
-  incr       [ shape=ellipse, label="Incremental" ];
+  incr       [ shape=ellipse, label="Analysis" ];
   
   gsi_sol  [ shape=box, label="GSI\nSolver" ];
   ufo      [ shape=box, label="UFO" ];

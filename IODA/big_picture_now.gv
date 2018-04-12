@@ -3,7 +3,7 @@ digraph NcdiagFlow
   obs_bufr [ shape=ellipse, label="Obs\nBUFR" ];
   obs_nc   [ shape=ellipse, label="Obs\nnetcdf" ];
   ncd      [ shape=ellipse, label="ncdiag" ];
-  incr     [ shape=ellipse, label="Incremental" ];
+  incr     [ shape=ellipse, label="Analysis" ];
   
 
   b2nc     [ shape=box, label="bufr2nc.py" ];
@@ -14,4 +14,6 @@ digraph NcdiagFlow
   obs_bufr -> b2nc -> obs_nc -> gsi_obs -> ncd -> gsi_sol -> incr;
 
   obs_nc -> ufo -> ncd;
+
+  obs_bufr -> gsi_obs;
   }

@@ -1,0 +1,11 @@
+digraph NcdiagFlow
+  {
+  driver    [ shape=box, label="Driver" ];
+  model     [ shape=box, label="Model" ];
+  connector [ shape=box, label="Connector" ];
+  mediator  [ shape=box, label="Mediator" ];
+
+  driver -> model;
+  driver -> connector;
+  driver -> mediator;
+  }

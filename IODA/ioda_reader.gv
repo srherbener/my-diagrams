@@ -1,0 +1,18 @@
+digraph NcdiagFlow
+  {
+  netcdf [ shape=ellipse, label="netcdf" ];
+
+  aircft   [ shape=box, label="m_diag_aircft.f90\n\nAircraft variable list\nread each variable" ];
+  conv     [ shape=box, label="m_diag_conv.f90\n\nConventional variable list\nread each variable" ];
+  empty    [ shape=box, label="...", penwidth=0.0, fontsize=50 ];
+  obs_type [ shape=box, label="m_diag_obs_type.f90\n\nObsType variable list\nread each variable" ];
+
+  get_var  [ shape=box, label="nc_diag_read_get_var()" ];
+
+  aircft -> get_var;
+  conv -> get_var;
+  empty -> get_var [ penwidth=0.0, arrowhead=none ];
+  obs_type -> get_var;
+
+  get_var -> netcdf;
+  }

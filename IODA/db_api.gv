@@ -1,0 +1,18 @@
+digraph API_structure
+  {
+  NetCdfFiles  [ shape=ellipse, label="netCDF files" ];
+  OdbFiles     [ shape=ellipse, label="ODB files" ];
+  SpaceFiles   [ shape=none, label="..." ];
+  MoreFiles    [ shape=ellipse, label="??? files" ];
+
+  ObsdbApi [ shape=record, label="{Obs DB API|Obs DB Manager|{<nc1>netCDF Interface|<odb1>ODB Interface|<extra1>...|<extra2>???}}" ];
+
+  Client [ shape=ellipse, label="Client" ];
+
+
+  Client -> ObsdbApi;
+  ObsdbApi:nc1 -> NetCdfFiles;
+  ObsdbApi:odb1 -> OdbFiles;
+  ObsdbApi:extra1 -> SpaceFiles [ style=invis ];
+  ObsdbApi:extra2 -> MoreFiles;
+  }

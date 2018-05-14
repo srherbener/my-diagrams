@@ -3,6 +3,7 @@
 DIAGRAMS = \
   ioda_reader.png \
   ncdiag_flow.png \
+  class_structure.png \
   big_picture_before.png \
   big_picture_now.png \
   big_picture_next.png \

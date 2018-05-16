@@ -1,0 +1,27 @@
+digraph ClassStruct
+  {
+  ObsSpace [ shape=box, label="ObsSpace" ];
+  Odb1Memory [ shape=box, label="ODB '1'\nin memory structure" ];
+
+  IodaMemory [ shape=box, label="IODA\nin memory structure" ];
+
+  Netcdf [ shape=ellipse, label="netCDF" ];
+  Odb1File [ shape=ellipse, label="ODB1\nFile" ];
+  Odb2File [ shape=ellipse, label="ODB2\nFile" ];
+  Odb2FileFromOdb1 [ shape=ellipse, label="ODB2 File\nfrom ODB1 file" ];
+
+  Archive [ shape=box, label="Archive" ];
+
+  ObsSpace -> Odb1Memory [ dir=back ];
+  ObsSpace -> IodaMemory [ dir=back ];
+
+  IodaMemory -> Netcdf [ dir=back ];
+  Odb1Memory -> Odb1File [ dir=back ];
+  Odb1Memory -> Odb2File [ dir=back ];
+
+  Odb1File -> Odb2FileFromOdb1;
+  Odb2File -> Archive;
+  Odb2FileFromOdb1 -> Archive;
+
+  Odb2File -> IodaMemory [ style=dashed, label="David created\nthis link" ];
+  }

@@ -8,6 +8,8 @@ digraph ClassStruct
   ObsSpaceBase [ shape=record, label="{oops::ObsSpaceBase|conf_\nwinbgn_\nwinend_}" ];
 
   OopsObsVector [ shape=record, label="{oops::ObsVector|<ovec1>data_}" ];
+
+  OopsLocations [ shape=record, label="{oops::Locations|<locs1>locs_}" ];
   }
 
   subgraph cluster_IODA {
@@ -15,18 +17,15 @@ digraph ClassStruct
   label="IODA";
 
   ObsSpace [ shape=record, label="{ioda::ObsSpace|<os1>F90odb keyOspace_}" ];
-  OspaceRegistry [ shape=record, label="{ioda_obs_OBSTYPE|nobs\nnlocs\nheader\nmass(:)}" ];
-
+  OspaceRegistry [ shape=record, label="{ioda_obsdb|nobs\nnlocs\nobsvars}" ];
   ObsSpace:os1 -> OspaceRegistry [ style=dashed ];
 
   ObsVector [ shape=record, label="{ioda::ObsVector|<ov1>F90ovec keyOvec_}" ];
   OvecRegistry [ shape=record, label="{obs_vector|nobs\nvalues(:)}" ];
-
   ObsVector:<ov1> -> OvecRegistry [ style=dashed ];
 
   ObsLoc [ shape=record, label="{ioda::Locations|<loc1>F90locs keyLoc_}" ];
-  OlocRegistry [ shape=record, label="{ioda_locs|nlocs\nlat(:)\nlon(:)\nTime(:)}" ];
-
+  OlocRegistry [ shape=record, label="{ioda_locs|nlocs\nlat(:)\nlon(:)\ntime(:)}" ];
   ObsLoc:<loc1> -> OlocRegistry [ style=dashed ];
   }
 
@@ -34,7 +33,8 @@ digraph ClassStruct
 
   ObsSpaceBase -> ObsSpace [ dir=back ];
 
-
   OopsObsVector:ovec1 -> ObsVector [ dir=back ];
+
+  OopsLocations:locs1 -> ObsLoc [ dir = back ];
 
   }

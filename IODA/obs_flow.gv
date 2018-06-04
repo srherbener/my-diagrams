@@ -1,0 +1,14 @@
+digraph NcdiagFlow
+  {
+  obs        [ shape=ellipse, label="Obs" ];
+  obs_intobs [ shape=ellipse, label="Obs\n+\nInterpolated Obs" ];
+  anal       [ shape=ellipse, label="Analysis" ];
+
+  gsi_obs  [ shape=box, label="GSI\nObserver" ];
+  gsi_sol  [ shape=box, label="GSI\nSolver" ];
+  ufo      [ shape=box, label="UFO" ];
+
+  obs -> gsi_obs -> obs_intobs -> gsi_sol -> anal;
+  obs -> ufo -> obs_intobs;
+
+  }

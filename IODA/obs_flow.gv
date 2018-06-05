@@ -1,7 +1,7 @@
 digraph NcdiagFlow
   {
   obs        [ shape=ellipse, label="Obs" ];
-  obs_intobs [ shape=ellipse, label="Obs\n+\nInterpolated Obs" ];
+  obs_intobs [ shape=ellipse, label="Obs\n+\nSimulated Obs" ];
   anal       [ shape=ellipse, label="Analysis" ];
 
   gsi_obs  [ shape=box, label="GSI\nObserver" ];

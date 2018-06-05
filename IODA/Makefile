@@ -4,6 +4,7 @@ DIAGRAMS = \
   ioda_reader.png \
   ncdiag_flow.png \
   class_structure.png \
+  obs_flow.png \
   db_api.png \
   big_picture_before.png \
   big_picture_now.png \

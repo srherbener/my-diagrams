@@ -2,6 +2,7 @@
 
 DIAGRAMS = \
   odb_ioda.png \
+  odb1_table_org.png
 
 
 all: $(DIAGRAMS)

@@ -1,0 +1,23 @@
+digraph ClassStruct
+  {
+  Desc [ shape=box, label="Description\n(File info, Obs Cycle, etc)" ];
+  Hdr  [ shape=box, label="Header\n(Lat, Lon,\nTime, ID, etc)" ];
+  Body [ shape=box, label="Body\n(Obs Values,\nError codes,\nQC Marks, etc)" ];
+
+  Hdr1 [ shape=box, label="Header" ];
+  Hdr2 [ shape=box, label="Header" ];
+  Hdr3 [ shape=box, label="Header" ];
+
+  Body1 [ shape=box, label="Body" ];
+  Body2 [ shape=box, label="Body" ];
+  Body3 [ shape=box, label="Body" ];
+
+  Desc -> Hdr -> Body;
+  Desc -> Hdr1;
+  Desc -> Hdr2;
+  Desc -> Hdr3;
+
+  Hdr -> Body1;
+  Hdr -> Body2;
+  Hdr -> Body3;
+  }

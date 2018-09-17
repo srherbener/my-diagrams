@@ -1,0 +1,38 @@
+digraph MultiIndex
+  {
+  rankdir="LR";
+
+  OV     [ shape=box, label="ObsValue" ];
+
+  OV_T   [ shape=box, label="T" ];
+  OV_Q   [ shape=box, label="Q" ];
+  OV_U   [ shape=box, label="U" ];
+  OV_V   [ shape=box, label="V" ];
+
+  OV_T_D  [ shape=box, label="", width=4.0 ];
+  OV_Q_D  [ shape=box, label="", width=4.0 ];
+  OV_U_D  [ shape=box, label="", width=4.0 ];
+  OV_V_D  [ shape=box, label="", width=4.0 ];
+
+  HX     [ shape=box, label="HofX" ];
+
+  HX_T   [ shape=box, label="T" ];
+  HX_Q   [ shape=box, label="Q" ];
+  HX_U   [ shape=box, label="U" ];
+  HX_V   [ shape=box, label="V" ];
+
+  HX_T_D  [ shape=box, label="", width=4.0 ];
+  HX_Q_D  [ shape=box, label="", width=4.0 ];
+  HX_U_D  [ shape=box, label="", width=4.0 ];
+  HX_V_D  [ shape=box, label="", width=4.0 ];
+
+  OV -> OV_T -> OV_T_D;
+  OV -> OV_Q -> OV_Q_D;
+  OV -> OV_U -> OV_U_D;
+  OV -> OV_V -> OV_V_D;
+
+  HX -> HX_T -> HX_T_D;
+  HX -> HX_Q -> HX_Q_D;
+  HX -> HX_U -> HX_U_D;
+  HX -> HX_V -> HX_V_D;
+  }

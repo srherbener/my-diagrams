@@ -5,6 +5,8 @@ DIAGRAMS = \
   ncdiag_flow.png \
   class_structure.png \
   obs_flow.png \
+  obs_data_base_old.png \
+  obs_data_base_new.png \
   db_api.png \
   big_picture_before.png \
   big_picture_now.png \

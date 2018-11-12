@@ -1,0 +1,8 @@
+digraph NcdiagFlow
+  {
+  obs_netcdf [ shape=ellipse, label="Obs Netcdf" ];
+  obs_reader [ shape=box, label="Obs\nNetcdf Reader" ];
+  obs_store  [ shape=ellipse, label="Obs\nData Store" ];
+
+  obs_netcdf -> obs_reader -> obs_store;
+  }

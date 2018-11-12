@@ -1,0 +1,25 @@
+digraph NcdiagFlow
+  {
+  # old way
+  radio_obsdb    [ shape=ellipse, label="Radiosonde\nObs Netcdf" ];
+  radiance_obsdb [ shape=ellipse, label="Radiance\nObs Netcdf" ];
+  etc_obsdb [ shape=none, label="...", fontsize=50 ];
+
+  radio_reader    [ shape=box, label="Radiosonde\nNetcdf Reader" ];
+  radiance_reader [ shape=box, label="Radiance\nNetcdf Reader" ];
+  etc_reader [ shape=none, label="...", fontsize=50 ];
+
+  subgraph cluster_InMem {
+  graph [ style=dotted ];
+  label="In-Memory Obs Data Store"
+
+  radio_store    [ shape=ellipse, label="Radiosonde\nData Store" ];
+  radiance_store [ shape=ellipse, label="Radiance\nData Store" ];
+  etc_store [ shape=none, label="...", fontsize=50 ];
+  }
+
+  radio_obsdb -> radio_reader -> radio_store;
+  radiance_obsdb -> radiance_reader -> radiance_store;
+  etc_obsdb -> etc_reader -> etc_store [ style=invis ];
+
+  }

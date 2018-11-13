@@ -1,0 +1,28 @@
+digraph ClassStruct
+  {
+  subgraph cluster_OOPS {
+  graph [ style=dotted ];
+  label="OOPS";
+
+  ObservationSpace [ shape=record, label="{oops::ObservationSpace\<MODEL\>|<odb1>obsdb_}" ];
+
+  OopsObsVector [ shape=record, label="{oops::ObsVector\<MODEL\>|<ovec1>data_}" ];
+  }
+
+  subgraph cluster_IODA {
+  graph [ style=dotted ];
+  label="IODA";
+
+  ObsSpace [ shape=record, label="{ioda::ObsSpace|nlocs_|<odb2>obsdb_}" ];
+  ObsSpaceDb [ shapre=ellipse, label="Obs Data" ];
+  ObsSpace:odb2 -> ObsSpaceDb [ style=dashed ];
+
+  ObsVector [ shape=record, label="{ioda::ObsVector|nvars_\nobsvars_|<ovec2>values_}" ];
+  ObsVectorValues [ shapre=ellipse, label="Obs Vector Data" ];
+  ObsVector:ovec2 -> ObsVectorValues [ style=dashed ];
+  }
+
+  ObservationSpace:odb1 -> ObsSpace [ style=dashed ];
+
+  OopsObsVector:ovec1 -> ObsVector [ style=dashed ];
+  }

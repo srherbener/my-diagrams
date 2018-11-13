@@ -4,6 +4,7 @@ DIAGRAMS = \
   ioda_reader.png \
   ncdiag_flow.png \
   class_structure.png \
+  class_structure2.png \
   obs_flow.png \
   obs_data_base_old.png \
   obs_data_base_new.png \

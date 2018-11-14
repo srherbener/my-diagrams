@@ -14,7 +14,7 @@ digraph ClassStruct
   label="IODA";
 
   ObsSpace [ shape=record, label="{ioda::ObsSpace|nlocs_|<odb2>obsdb_}" ];
-  ObsSpaceDb [ shapre=ellipse, label="Obs Data" ];
+  ObsSpaceDb [ shapre=ellipse, label="Obs Database" ];
   ObsSpace:odb2 -> ObsSpaceDb [ style=dashed ];
 
   ObsVector [ shape=record, label="{ioda::ObsVector|nvars_\nobsvars_|<ovec2>values_}" ];
